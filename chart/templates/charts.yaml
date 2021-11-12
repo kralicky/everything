@@ -1,0 +1,17 @@
+{{- range $tmpl := .Values.bitnamiTemplates }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $tmpl.name }}
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: {{ $tmpl.name }}
+  namespace: helm-system
+spec:
+  targetNamespace: {{ $tmpl.name }}
+  repo: https://charts.bitnami.com/bitnami
+  chart: {{ $tmpl.name }}
+{{- end }}
