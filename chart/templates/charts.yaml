@@ -14,4 +14,8 @@ spec:
   targetNamespace: {{ $tmpl.name }}
   repo: https://charts.bitnami.com/bitnami
   chart: {{ $tmpl.name }}
+{{- if $tmpl.set }}
+  set: 
+{{ $tmpl.set | toYaml | indent 4 }}
+{{- end }}
 {{- end }}

@@ -5,6 +5,8 @@ bitnamiTemplates:
   - name: argo-workflows
   - name: cassandra
   - name: cert-manager
+    set:
+      installCRDs: "true"
   - name: concourse
   - name: consul
   - name: contour-operator
