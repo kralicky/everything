@@ -1,7 +1,5 @@
-{{- range $tmpl := .Values.bitnamiTemplates -}}
-{{- $ns := lookup "v1" "Namespace" "" $tmpl.name -}}
-{{- if not $ns -}}
----
+{{- range $tmpl := .Values.bitnamiTemplates }}
+{{- if not (lookup "v1" "Namespace" "" $tmpl.name) }}
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -16,9 +14,10 @@ spec:
   targetNamespace: {{ $tmpl.name }}
   repo: https://charts.bitnami.com/bitnami
   chart: {{ $tmpl.name }}
-{{- if $tmpl.set -}}
+{{- if $tmpl.set }}
   set: 
 {{ $tmpl.set | toYaml | indent 4 }}
-{{- end -}}
-{{- end -}}
-{{- end -}}
+{{- end }}
+{{- end }}
+---
+{{- end }}
