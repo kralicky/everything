@@ -40,6 +40,10 @@ bitnamiTemplates:
   - name: memcached
   - name: metallb
   - name: metrics-server
+    set:
+      apiService.create: "true"
+      extraArgs.kubelet-insecure-tls: "true"
+      extraArgs.kubelet-preferred-address-types: InternalIP
   - name: minio
   - name: mongodb
   - name: moodle

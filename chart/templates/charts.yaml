@@ -1,5 +1,11 @@
 {{- range $tmpl := .Values.bitnamiTemplates }}
-{{- if not (lookup "v1" "Namespace" "" $tmpl.name) }}
+{{- $ns := (lookup "v1" "Namespace" "" $tmpl.name) -}}
+{{- $managedByHelm := false }}
+{{- if $ns }}
+  {{- $managedByHelm = (get $ns.metadata.labels "app.kubernetes.io/managed-by" | eq "Helm") }}
+{{- end }}
+
+{{- if (or (not $ns) ($managedByHelm)) }}
 apiVersion: v1
 kind: Namespace
 metadata:
