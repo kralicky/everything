@@ -1,79 +1,82 @@
-bitnamiTemplates:
-  - name: airflow
-  - name: apache
-  - name: argo-cd
-  - name: argo-workflows
-  - name: cassandra
-  - name: cert-manager
-    set:
-      installCRDs: "true"
-  - name: concourse
-  - name: consul
-  - name: contour-operator
-  - name: dataplatform-bp1
-  - name: discourse
-  - name: dokuwiki
-  - name: drupal
-  - name: ejbca
-  - name: elasticsearch
-  - name: fluentd
-  - name: geode
-  - name: grafana
-  - name: ghost
-  - name: haproxy
-  - name: harbor
-  - name: influxdb
-  - name: jenkins
-  - name: joomla
-  - name: jupyterhub
-  - name: kafka
-  - name: keycloak
-  - name: kibana
-  - name: kube-prometheus
-  - name: kube-state-metrics
-  - name: kubernetes-event-exporter
-  - name: kubewatch
-  - name: logstash
-  - name: magento
-  - name: mariadb
-  - name: mediawiki
-  - name: memcached
-  - name: metallb
-  - name: metrics-server
-    set:
-      apiService.create: "true"
-      extraArgs.kubelet-insecure-tls: "true"
-      extraArgs.kubelet-preferred-address-types: "InternalIP,ExternalIP"
-  - name: minio
-  - name: mongodb
-  - name: moodle
-  - name: mxnet
-  - name: mysql
-  - name: nats
-  - name: oauth2-proxy
-  - name: odoo
-  - name: opencart
-  - name: orangehrm
-  - name: osclass
-  - name: owncloud
-  - name: parse
-  - name: phabricator
-  - name: phpbb
-  - name: phpmyadmin
-  - name: postgresql
-  - name: prestashop
-  - name: rabbitmq
-  - name: redis
-  - name: redmine
-  - name: solr
-  - name: sonarqube
-  - name: spark
-  - name: spring-cloud-dataflow
-  - name: suitecrm
-  - name: testlink
-  - name: thanos
-  - name: tomcat
-  - name: wavefront
-  - name: wildfly
-  - name: wordpress
-  - name: zookeeper
+bitnami:
+  set:
+    service.type: ClusterIP
+  charts:
+    - name: airflow
+    - name: apache
+    - name: argo-cd
+    - name: argo-workflows
+    - name: cassandra
+    - name: cert-manager
+      set:
+        installCRDs: "true"
+    - name: concourse
+    - name: consul
+    - name: contour-operator
+    - name: dataplatform-bp1
+    - name: discourse
+    - name: dokuwiki
+    - name: drupal
+    - name: ejbca
+    - name: elasticsearch
+    - name: fluentd
+    - name: geode
+    - name: grafana
+    - name: ghost
+    - name: haproxy
+    - name: harbor
+    - name: influxdb
+    - name: jenkins
+    - name: joomla
+    - name: jupyterhub
+    - name: kafka
+    - name: keycloak
+    - name: kibana
+    - name: kube-prometheus
+    - name: kube-state-metrics
+    - name: kubernetes-event-exporter
+    - name: kubewatch
+    - name: logstash
+    - name: magento
+    - name: mariadb
+    - name: mediawiki
+    - name: memcached
+    - name: metallb
+    - name: metrics-server
+      set:
+        apiService.create: "true"
+        extraArgs.kubelet-insecure-tls: "true"
+        extraArgs.kubelet-preferred-address-types: "InternalIP,ExternalIP"
+    - name: minio
+    - name: mongodb
+    - name: moodle
+    - name: mxnet
+    - name: mysql
+    - name: nats
+    - name: oauth2-proxy
+    - name: odoo
+    - name: opencart
+    - name: orangehrm
+    - name: osclass
+    - name: owncloud
+    - name: parse
+    - name: phabricator
+    - name: phpbb
+    - name: phpmyadmin
+    - name: postgresql
+    - name: prestashop
+    - name: rabbitmq
+    - name: redis
+    - name: redmine
+    - name: solr
+    - name: sonarqube
+    - name: spark
+    - name: spring-cloud-dataflow
+    - name: suitecrm
+    - name: testlink
+    - name: thanos
+    - name: tomcat
+    - name: wavefront
+    - name: wildfly
+    - name: wordpress
+    - name: zookeeper
