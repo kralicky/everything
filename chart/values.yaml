@@ -43,7 +43,7 @@ bitnamiTemplates:
     set:
       apiService.create: "true"
       extraArgs.kubelet-insecure-tls: "true"
-      extraArgs.kubelet-preferred-address-types: InternalIP
+      extraArgs.kubelet-preferred-address-types: "InternalIP,ExternalIP"
   - name: minio
   - name: mongodb
   - name: moodle
